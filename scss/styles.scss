@@ -1,0 +1,460 @@
+@import "overrides.scss";
+@import "../node_modules/bulma/bulma.sass";
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.navbar {
+  // min-height: 4rem;
+  padding: 0 1rem;
+  &.is-primary {
+    box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.12);
+  }
+  @media screen and (max-width: $tablet) {
+    padding: 0;
+  }
+
+  .navbar-item {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: small;
+  }
+
+  .navbar-burger span {
+    height: 2px;
+  }
+}
+
+.full-width-section {
+  margin: 0;
+  padding: 0;
+  background-color: $white-ter;
+
+  .title {
+    width: 100%;
+    padding: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $white;
+    background-color: $madrasters-yellow;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .content {
+    background-color: $white-ter;
+    color: $text;
+    padding: 2.5rem 1rem;
+
+    .info {
+      padding: 1rem;
+
+      h5 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 0.6rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: $grey;
+      }
+
+      a {
+        color: $text;
+        text-decoration: none;
+        color: $grey;
+      }
+
+      a:hover {
+        color: $text;
+        text-decoration: underline;
+      }
+
+      .social-media {
+        padding: 0.6rem;
+        display: inline;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.main-section {
+  margin: 0;
+  padding: 0;
+
+  .workshops-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .workshop {
+    display: inline-block;
+    width: 50%;
+    min-height: 100vh;
+
+    .sidebar {
+      display: none;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      flex-direction: row;
+      justify-content: center;
+
+      p {
+        font-size: 26px;
+        writing-mode: vertical-lr;
+        text-transform: uppercase;
+        margin-top: 20px;
+      }
+    }
+
+    &.is-workshop-1 {
+      background-color: #fef7f7;
+    }
+
+    &.is-workshop-2 {
+      background-color: #f5fbfd;
+    }
+
+    &.is-workshop-1.is-active {
+      animation: slideInLeft 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
+    }
+
+    &.is-workshop-2.is-active {
+      animation: slideInRight 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
+    }
+
+    &.is-workshop-1 .sidebar {
+      background-color: $workshop-1;
+      background-image: url("../images/tamil-calligraphy-bg.png");
+      animation: slideInLeft 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
+      p {
+        transform: rotate(-180deg);
+        text-align: right;
+      }
+    }
+
+    &.is-workshop-2 .sidebar {
+      background-color: $workshop-2;
+      background-image: url("../images/micro-interaction-bg.png");
+      background-repeat: repeat;
+      animation: slideInRight 0.1s cubic-bezier(0.09, 0.73, 0.97, 0.62);
+      p {
+        text-align: left;
+      }
+    }
+
+    .banner {
+      width: 100%;
+      margin: 0 0 10px 0;
+      display: block;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        .button {
+          font-weight: bold;
+          text-transform: uppercase;
+          border-radius: 0;
+          font-size: 1.2rem;
+          padding: 1.3em 1.9em;
+          box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.17);
+          border-radius: 1px;
+          transition: all 0.3s ease-in;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i,
+          svg {
+            display: none;
+            margin-left: 8px;
+            font-size: 0.75rem;
+            margin-top: -2px;
+          }
+
+          &:hover {
+            transform: translateX(-3px);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.17);
+            padding: 1.3em 1.6em;
+          }
+
+          &:hover i,
+          &:hover svg {
+            display: inline-block;
+          }
+
+          @media screen and (max-width: 767px) {
+            padding: 1.2em 1.7em;
+            font-size: 0.75rem;
+          }
+        }
+
+        .button.is-workshop-1-button {
+          top: -8%;
+          left: 8%;
+          background-color: #ffb448;
+          color: $white;
+          border-color: transparent;
+        }
+
+        .button.is-workshop-2-button {
+          top: -16%;
+          left: 29%;
+          background-color: #0fe2d6;
+          color: $white;
+          border-color: transparent;
+
+          @media screen and (max-width: 767px) {
+            left: 20%;
+          }
+        }
+      }
+    }
+    .about {
+      padding: 4rem;
+
+      @media screen and (max-width: $tablet) {
+        padding: 3rem;
+      }
+
+      &#about-speaker {
+        @media screen and (min-width: $desktop) {
+          min-height: 1100px;
+        }
+      }
+
+      &#about-workshop {
+        @media screen and (min-width: $desktop) {
+          min-height: 900px;
+        }
+      }
+
+      .title {
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        word-wrap: break-word;
+
+        span {
+          font-weight: 900;
+        }
+      }
+      .underline {
+        width: 10%;
+        border-bottom: solid 2px;
+        margin: 1rem 0;
+      }
+
+      .content {
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin: 1rem 0;
+
+        img {
+          width: auto;
+          height: 400px;
+          object-fit: contain;
+          margin: 2rem auto;
+          display: block;
+        }
+      }
+
+      .button {
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 0;
+        font-size: 1.2rem;
+        padding: 1.3em 1.9em;
+        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.17);
+        border-radius: 1px;
+        transition: all 0.3s ease-in;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        i,
+        svg {
+          display: none;
+          margin-left: 8px;
+          font-size: 0.75rem;
+          margin-top: -2px;
+        }
+
+        &:hover {
+          transform: translateX(-3px);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.17);
+          padding: 1.3em 1.6em;
+        }
+
+        &:hover i,
+        &:hover svg {
+          display: inline-block;
+        }
+
+        @media screen and (max-width: 767px) {
+          padding: 1.3em 1.7em;
+          font-size: 0.85rem;
+        }
+      }
+
+      .button.is-workshop-1-button {
+        background-color: #e54b27;
+        color: $white;
+        border-color: transparent;
+      }
+
+      .button.is-workshop-2-button {
+        background-color: #02277b;
+        color: $white;
+        border-color: transparent;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 20%;
+
+      .banner,
+      .about {
+        display: none;
+        //visibility: hidden;
+      }
+
+      .sidebar {
+        display: flex;
+        //visibility: visible;
+      }
+
+      &.is-active {
+        width: 80%;
+
+        .banner,
+        .about {
+          display: block;
+          //visibility: visible;
+        }
+
+        .sidebar {
+          display: none;
+          //visibility: hidden;
+        }
+      }
+
+      &.is-initial {
+        width: 50%;
+        .banner,
+        .about {
+          display: none;
+          //visibility: hidden;
+        }
+
+        .sidebar {
+          display: flex;
+          //visibility: visible;
+        }
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      &.is-active {
+        animation: none !important;
+      }
+    }
+  }
+}
+
+.has-workshop-1-color {
+  color: $workshop-1;
+  border-color: $workshop-1;
+}
+
+.has-workshop-2-color {
+  color: $workshop-2;
+  border-color: $workshop-2;
+}
+
+.has-0-padding {
+  padding: 0;
+}
+
+.has-0-margin {
+  margin: 0;
+}
+
+footer {
+  background-color: $grey-darker;
+  color: $white-ter;
+  font-size: 0.8rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.gallery {
+  width: 100%;
+  a {
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 120px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

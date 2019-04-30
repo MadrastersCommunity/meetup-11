@@ -1,0 +1,32 @@
+{
+  "name": "meetup-11",
+  "version": "1.0.0",
+  "description": "Landing page for Meetup conducted by Madrasters on 25th May, 2019.",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "watch": "parcel watch index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadrastersCommunity/meetup-11.git"
+  },
+  "author": "Ananthakumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadrastersCommunity/meetup-11/issues"
+  },
+  "homepage": "https://github.com/MadrastersCommunity/meetup-11#readme",
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "lightgallery": "^1.6.12",
+    "sass": "^1.16.0",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.8",
+    "node-sass": "^4.11.0"
+  }
+}
