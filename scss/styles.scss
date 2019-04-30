@@ -5,21 +5,33 @@
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 16px;
+  scroll-behavior: smooth;
   @media (max-width: 768px) {
     font-size: 12px;
   }
 }
 
+// For people prone to motion sickness, smooth scrolling might be jarring. this overrides that option by listening Reduce Motion API.
+@media screen and (prefers-reduced-motion: reduce) {
+  :root,
+  body {
+    scroll-behavior: auto;
+  }
+}
+
 @mixin content-section {
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
   display: block;
   width: 100%;
   margin: 0;
 }
 
 @mixin block-base {
-  margin-left: $column-1;
+  margin-left: $column-2;
   margin-right: $column-1;
+  @media (max-width: 768px) {
+    margin-left: $column-1;
+  }
 }
 
 @mixin section-title {
@@ -60,32 +72,6 @@ body {
   font-style: italic;
 }
 
-@keyframes slideInLeft {
-  from {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 .navbar {
   // min-height: 4rem;
   padding: 0 1rem;
@@ -110,7 +96,10 @@ body {
 .banner {
   @include content-section();
   background-color: $meetup-purple;
-  // background-image: url(../images/hero-bg-shapes-full.svg);
+  background-image: url(../images/hero-bg-shapes-full.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: $text-light;
 
   h1 {
@@ -175,6 +164,10 @@ body {
 .speakers {
   @include content-section();
   background-color: $meetup-blue;
+  background-image: url(../images/speakers-bg-shapes-full.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: $text-light;
 
   h2 {
@@ -262,7 +255,7 @@ body {
         border-radius: 50%;
         background-color: $meetup-orange;
 
-        @media(max-width: 768px){
+        @media (max-width: 768px) {
           width: 15px;
           height: 15px;
         }
@@ -293,55 +286,53 @@ body {
     @include block-base();
   }
 
-  .team-container{
+  .team-container {
     @include block-base();
-    li{
+    li {
       width: $column-2;
       display: inline-block;
-      padding-right:2rem; 
-      @media(max-width:1024px){
+      padding-right: 2rem;
+      @media (max-width: 1024px) {
         width: $column-3;
       }
-      @media(max-width:768px){
+      @media (max-width: 768px) {
         width: $column-4;
       }
-      @media(max-width:359px){
+      @media (max-width: 359px) {
         width: $column-8;
       }
-      
-      figure{
-        width: 200px;
-        height: 200px;
+
+      figure {
+        width: 150px;
+        height: 150px;
         margin: 0 auto;
-        @media(max-width:768px){
+        @media (max-width: 768px) {
           width: 120px;
           height: 120px;
         }
-       
-        img{
+
+        img {
           width: 100%;
           height: 100%;
           object-fit: contain;
           border-radius: 50%;
         }
-       
       }
-      p{
+      p {
         margin: 1rem 0;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 500;
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
     }
   }
-
 }
 
 .contact-section {
   @include content-section();
-  background-color: #E2E2E2;
+  background-color: #e2e2e2;
   color: $text-primary;
 
   h2 {
@@ -349,21 +340,20 @@ body {
     @include block-base();
   }
 
-  iframe{
+  iframe {
     @include block-base();
-    border:0;
-    width:$column-6;
-    height:40vh;
-    @media(max-width:768px){
-      width:$column-7;
+    border: 0;
+    width: $column-6;
+    height: 40vh;
+    @media (max-width: 768px) {
+      width: $column-7;
     }
   }
 
   .content {
-   
     color: $text;
     @include block-base();
-    width:$column-6;
+    width: $column-6;
 
     .info {
       // padding: 1rem;
@@ -406,7 +396,10 @@ footer {
   color: $white-ter;
   font-size: 0.8rem;
   font-weight: 300;
-  padding: 1rem 1rem 1rem $column-1 ;
+  padding: 1rem 1rem 1rem $column-2;
+  @media (max-width: 768px) {
+    padding-left: $column-1;
+  }
 }
 
 // .gallery {
