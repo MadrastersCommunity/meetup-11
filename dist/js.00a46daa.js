@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../images/tamil-calligraphy-bg.png":[["tamil-calligraphy-bg.6645ad5c.png","images/tamil-calligraphy-bg.png"],"images/tamil-calligraphy-bg.png"],"./../images/micro-interaction-bg.png":[["micro-interaction-bg.e7237856.png","images/micro-interaction-bg.png"],"images/micro-interaction-bg.png"],"_css_loader":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"js/index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 require("../scss/styles.scss");

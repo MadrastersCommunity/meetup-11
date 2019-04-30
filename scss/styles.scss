@@ -1,8 +1,63 @@
 @import "overrides.scss";
 @import "../node_modules/bulma/bulma.sass";
 
+:root,
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+@mixin content-section {
+  padding: 4rem 1rem;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+@mixin block-base {
+  margin-left: $column-1;
+  margin-right: $column-1;
+}
+
+@mixin section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.has-0-padding {
+  padding: 0;
+}
+
+.has-0-margin {
+  margin: 0;
+}
+
+.color-purple {
+  color: $meetup-purple;
+}
+.color-blue {
+  color: $meetup-blue;
+}
+.color-yellow {
+  color: $meetup-yellow;
+}
+.color-orange {
+  color: $meetup-orange;
+}
+.color-text-primary {
+  color: $text-primary;
+}
+.color-text-secondary {
+  color: $text-secondary;
+}
+.font-style-italic {
+  font-style: italic;
 }
 
 @keyframes slideInLeft {
@@ -52,40 +107,276 @@ body {
   }
 }
 
-.full-width-section {
-  margin: 0;
-  padding: 0;
-  background-color: $white-ter;
+.banner {
+  @include content-section();
+  background-color: $meetup-purple;
+  // background-image: url(../images/hero-bg-shapes-full.svg);
+  color: $text-light;
 
-  .title {
-    width: 100%;
-    padding: 2rem;
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    overflow-wrap: break-word;
+    @include block-base();
+    span {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 4rem;
+    @include block-base();
+  }
+  .button,
+  button {
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 1.5rem;
-    color: $white;
-    background-color: $madrasters-yellow;
-    text-align: center;
+    color: $meetup-purple;
+    background-color: #ffffff;
+    padding: 0.75rem 2rem;
+    height: auto;
+    @include block-base();
+    border: none;
+    border-radius: 0;
     text-transform: uppercase;
-    margin: 0;
+    transition: all ease-in 0.2s;
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  }
+}
+
+.about {
+  @include content-section();
+  background-color: #ffffff;
+  color: $text-primary;
+
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+  p {
+    @include block-base();
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    @include block-base();
+    padding-left: 2rem;
+    list-style: disc;
+    margin-bottom: 1rem;
+  }
+}
+
+.speakers {
+  @include content-section();
+  background-color: $meetup-blue;
+  color: $text-light;
+
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+
+  .speakers-container {
+    @include block-base();
+
+    .speaker {
+      width: $column-4;
+      display: inline-block;
+      padding-right: 1rem;
+
+      @media (max-width: 768px) {
+        width: $column-8;
+      }
+
+      figure {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1rem;
+
+        @media (max-width: 768px) {
+          width: 120px;
+          height: 120px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 50%;
+        }
+      }
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.agenda {
+  @include content-section();
+  background-color: #ffffff;
+  color: $text-primary;
+
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+
+  .agenda-container {
+    @include block-base();
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      left: -2px;
+      background-color: $meetup-orange;
+    }
+    li {
+      margin-left: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 1.2rem;
+        left: -2.68rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $meetup-orange;
+
+        @media(max-width: 768px){
+          width: 15px;
+          height: 15px;
+        }
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.2rem;
+        color: $text-secondary;
+      }
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.team {
+  @include content-section();
+  background-color: #ffffff;
+  color: $text-primary;
+
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+
+  .team-container{
+    @include block-base();
+    li{
+      width: $column-2;
+      display: inline-block;
+      padding-right:2rem; 
+      @media(max-width:1024px){
+        width: $column-3;
+      }
+      @media(max-width:768px){
+        width: $column-4;
+      }
+      @media(max-width:359px){
+        width: $column-8;
+      }
+      
+      figure{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        @media(max-width:768px){
+          width: 120px;
+          height: 120px;
+        }
+       
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 50%;
+        }
+       
+      }
+      p{
+        margin: 1rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}
+
+.contact-section {
+  @include content-section();
+  background-color: #E2E2E2;
+  color: $text-primary;
+
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+
+  iframe{
+    @include block-base();
+    border:0;
+    width:$column-6;
+    height:40vh;
+    @media(max-width:768px){
+      width:$column-7;
+    }
   }
 
   .content {
-    background-color: $white-ter;
+   
     color: $text;
-    padding: 2.5rem 1rem;
+    @include block-base();
+    width:$column-6;
 
     .info {
-      padding: 1rem;
+      // padding: 1rem;
 
       h5 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: bold;
         margin-bottom: 0.6rem;
         text-transform: uppercase;
       }
 
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: bold;
         color: $grey;
       }
@@ -110,351 +401,26 @@ body {
   }
 }
 
-.main-section {
-  margin: 0;
-  padding: 0;
-
-  .workshops-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .workshop {
-    display: inline-block;
-    width: 50%;
-    min-height: 100vh;
-
-    .sidebar {
-      display: none;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      flex-direction: row;
-      justify-content: center;
-
-      p {
-        font-size: 26px;
-        writing-mode: vertical-lr;
-        text-transform: uppercase;
-        margin-top: 20px;
-      }
-    }
-
-    &.is-workshop-1 {
-      background-color: #fef7f7;
-    }
-
-    &.is-workshop-2 {
-      background-color: #f5fbfd;
-    }
-
-    &.is-workshop-1.is-active {
-      animation: slideInLeft 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
-    }
-
-    &.is-workshop-2.is-active {
-      animation: slideInRight 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
-    }
-
-    &.is-workshop-1 .sidebar {
-      background-color: $workshop-1;
-      background-image: url("../images/tamil-calligraphy-bg.png");
-      animation: slideInLeft 0.15s cubic-bezier(0.09, 0.73, 0.97, 0.62);
-      p {
-        transform: rotate(-180deg);
-        text-align: right;
-      }
-    }
-
-    &.is-workshop-2 .sidebar {
-      background-color: $workshop-2;
-      background-image: url("../images/micro-interaction-bg.png");
-      background-repeat: repeat;
-      animation: slideInRight 0.1s cubic-bezier(0.09, 0.73, 0.97, 0.62);
-      p {
-        text-align: left;
-      }
-    }
-
-    .banner {
-      width: 100%;
-      margin: 0 0 10px 0;
-      display: block;
-      position: relative;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .banner-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-
-        .button {
-          font-weight: bold;
-          text-transform: uppercase;
-          border-radius: 0;
-          font-size: 1.2rem;
-          padding: 1.3em 1.9em;
-          box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.17);
-          border-radius: 1px;
-          transition: all 0.3s ease-in;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          i,
-          svg {
-            display: none;
-            margin-left: 8px;
-            font-size: 0.75rem;
-            margin-top: -2px;
-          }
-
-          &:hover {
-            transform: translateX(-3px);
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.17);
-            padding: 1.3em 1.6em;
-          }
-
-          &:hover i,
-          &:hover svg {
-            display: inline-block;
-          }
-
-          @media screen and (max-width: 767px) {
-            padding: 1.2em 1.7em;
-            font-size: 0.75rem;
-          }
-        }
-
-        .button.is-workshop-1-button {
-          top: -8%;
-          left: 8%;
-          background-color: #ffb448;
-          color: $white;
-          border-color: transparent;
-        }
-
-        .button.is-workshop-2-button {
-          top: -16%;
-          left: 29%;
-          background-color: #0fe2d6;
-          color: $white;
-          border-color: transparent;
-
-          @media screen and (max-width: 767px) {
-            left: 20%;
-          }
-        }
-      }
-    }
-    .about {
-      padding: 4rem;
-
-      @media screen and (max-width: $tablet) {
-        padding: 3rem;
-      }
-
-      &#about-speaker {
-        @media screen and (min-width: $desktop) {
-          min-height: 1100px;
-        }
-      }
-
-      &#about-workshop {
-        @media screen and (min-width: $desktop) {
-          min-height: 900px;
-        }
-      }
-
-      .title {
-        font-size: 2.2rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        word-wrap: break-word;
-
-        span {
-          font-weight: 900;
-        }
-      }
-      .underline {
-        width: 10%;
-        border-bottom: solid 2px;
-        margin: 1rem 0;
-      }
-
-      .content {
-        font-size: 1.1rem;
-        font-weight: 300;
-        margin: 1rem 0;
-
-        img {
-          width: auto;
-          height: 400px;
-          object-fit: contain;
-          margin: 2rem auto;
-          display: block;
-        }
-      }
-
-      .button {
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 0;
-        font-size: 1.2rem;
-        padding: 1.3em 1.9em;
-        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.17);
-        border-radius: 1px;
-        transition: all 0.3s ease-in;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        i,
-        svg {
-          display: none;
-          margin-left: 8px;
-          font-size: 0.75rem;
-          margin-top: -2px;
-        }
-
-        &:hover {
-          transform: translateX(-3px);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.17);
-          padding: 1.3em 1.6em;
-        }
-
-        &:hover i,
-        &:hover svg {
-          display: inline-block;
-        }
-
-        @media screen and (max-width: 767px) {
-          padding: 1.3em 1.7em;
-          font-size: 0.85rem;
-        }
-      }
-
-      .button.is-workshop-1-button {
-        background-color: #e54b27;
-        color: $white;
-        border-color: transparent;
-      }
-
-      .button.is-workshop-2-button {
-        background-color: #02277b;
-        color: $white;
-        border-color: transparent;
-      }
-    }
-
-    @media screen and (max-width: $tablet) {
-      width: 20%;
-
-      .banner,
-      .about {
-        display: none;
-        //visibility: hidden;
-      }
-
-      .sidebar {
-        display: flex;
-        //visibility: visible;
-      }
-
-      &.is-active {
-        width: 80%;
-
-        .banner,
-        .about {
-          display: block;
-          //visibility: visible;
-        }
-
-        .sidebar {
-          display: none;
-          //visibility: hidden;
-        }
-      }
-
-      &.is-initial {
-        width: 50%;
-        .banner,
-        .about {
-          display: none;
-          //visibility: hidden;
-        }
-
-        .sidebar {
-          display: flex;
-          //visibility: visible;
-        }
-      }
-    }
-
-    @media screen and (min-width: $tablet) {
-      &.is-active {
-        animation: none !important;
-      }
-    }
-  }
-}
-
-.has-workshop-1-color {
-  color: $workshop-1;
-  border-color: $workshop-1;
-}
-
-.has-workshop-2-color {
-  color: $workshop-2;
-  border-color: $workshop-2;
-}
-
-.has-0-padding {
-  padding: 0;
-}
-
-.has-0-margin {
-  margin: 0;
-}
-
 footer {
   background-color: $grey-darker;
   color: $white-ter;
   font-size: 0.8rem;
   font-weight: 300;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem $column-1 ;
 }
 
-.gallery {
-  width: 100%;
-  a {
-    text-decoration: none;
-    display: block;
-    float: left;
-    margin: 0 5px 5px 0;
-    width: 120px;
+// .gallery {
+//   width: 100%;
+//   a {
+//     text-decoration: none;
+//     display: block;
+//     float: left;
+//     margin: 0 5px 5px 0;
+//     width: 120px;
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
+//     img {
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
+// }

@@ -2,6 +2,23 @@
 * Color Overrides
 */
 $madrasters-yellow:#f5ba41;
-$workshop-1:#e22f26;
-$workshop-2:#38b6e0;
+$meetup-purple:#4A127D;
+$meetup-blue:#1A1F7A;
+$meetup-yellow:#FFC500;
+$meetup-orange:#F7941D;
+$text-primary:#202020;
+$text-secondary:#808080;
+$text-light:#FFFFFF;
 $primary: $madrasters-yellow;
+
+/*
+* Sizes
+*/
+$column-1:calc(12.5% - 16px);
+$column-2:calc(25% - 16px);
+$column-3:calc(37.5% - 16px);
+$column-4:calc(50% - 16px);
+$column-5:calc(62.5% - 16px);
+$column-6:calc(75% - 16px);
+$column-7:calc(87.5% - 16px);
+$column-8:calc(100% - 16px);
