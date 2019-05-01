@@ -6994,7 +6994,7 @@ body {
   width: 100%;
   margin: 0;
   background-color: #4A127D;
-  background-image: url(/hero-bg-shapes-full.f509c010.svg);
+  background-image: url(/hero-bg-shapes-full-2.bdf222a0.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -7034,6 +7034,7 @@ body {
     border: none;
     border-radius: 0;
     text-transform: uppercase;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
     transition: all ease-in 0.2s; }
     @media (max-width: 768px) {
       .banner .button,
@@ -7042,7 +7043,8 @@ body {
     .banner .button:hover,
     .banner button:hover {
       opacity: 0.8;
-      text-decoration: underline; }
+      text-decoration: underline;
+      box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1); }
 
 .about {
   padding: 5rem 1rem;
@@ -7085,7 +7087,7 @@ body {
   width: 100%;
   margin: 0;
   background-color: #1A1F7A;
-  background-image: url(/speakers-bg-shapes-full.0ac4c877.svg);
+  background-image: url(/speakers-bg-shapes-full-2.85546db4.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

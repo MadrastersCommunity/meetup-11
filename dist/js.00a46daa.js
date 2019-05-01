@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../images/hero-bg-shapes-full.svg":[["hero-bg-shapes-full.f509c010.svg","images/hero-bg-shapes-full.svg"],"images/hero-bg-shapes-full.svg"],"./../images/speakers-bg-shapes-full.svg":[["speakers-bg-shapes-full.0ac4c877.svg","images/speakers-bg-shapes-full.svg"],"images/speakers-bg-shapes-full.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/index.js":[function(require,module,exports) {
+},{"./../images/hero-bg-shapes-full-2.svg":[["hero-bg-shapes-full-2.bdf222a0.svg","images/hero-bg-shapes-full-2.svg"],"images/hero-bg-shapes-full-2.svg"],"./../images/speakers-bg-shapes-full-2.svg":[["speakers-bg-shapes-full-2.85546db4.svg","images/speakers-bg-shapes-full-2.svg"],"images/speakers-bg-shapes-full-2.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 require("../scss/styles.scss");
@@ -247,7 +247,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59000" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54832" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

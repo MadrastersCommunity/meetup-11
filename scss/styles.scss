@@ -96,7 +96,7 @@ body {
 .banner {
   @include content-section();
   background-color: $meetup-purple;
-  background-image: url(../images/hero-bg-shapes-full.svg);
+  background-image: url(../images/hero-bg-shapes-full-2.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -131,10 +131,12 @@ body {
     border: none;
     border-radius: 0;
     text-transform: uppercase;
+    box-shadow: 2px 2px 2px 3px rgba(0,0,0,0.1);
     transition: all ease-in 0.2s;
     &:hover {
       opacity: 0.8;
       text-decoration: underline;
+      box-shadow: 3px 3px 3px 4px rgba(0,0,0,0.1);
     }
   }
 }
@@ -164,7 +166,7 @@ body {
 .speakers {
   @include content-section();
   background-color: $meetup-blue;
-  background-image: url(../images/speakers-bg-shapes-full.svg);
+  background-image: url(../images/speakers-bg-shapes-full-2.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
