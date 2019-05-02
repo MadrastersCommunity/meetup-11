@@ -150,14 +150,9 @@ body {
 .about {
   @include content-section();
   // background-color: #ffffff;
-  background: linear-gradient(
-        90deg,
-        #ffffff (22px - 2px),
-        transparent 1%
-      )
+  background: linear-gradient(90deg, #ffffff (22px - 2px), transparent 1%)
       center,
-    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
-    #e2e2e2;
+    linear-gradient(#ffffff (22px - 2px), transparent 1%) center, #e2e2e2;
   background-size: 22px 22px;
   color: $text-primary;
 
@@ -194,11 +189,15 @@ body {
 
   .speakers-container {
     @include block-base();
+    margin-top: 3rem;
 
     .speaker {
       width: $column-4;
-      display: inline-block;
       padding-right: 1rem;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
 
       @media (max-width: 768px) {
         width: $column-8;
@@ -217,12 +216,12 @@ body {
         img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
           border-radius: 50%;
         }
       }
       h4 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 500;
         margin-bottom: 1rem;
         text-transform: uppercase;
@@ -239,14 +238,9 @@ body {
 .agenda {
   @include content-section();
   // background-color: #ffffff;
-  background: linear-gradient(
-        90deg,
-        #ffffff (22px - 2px),
-        transparent 1%
-      )
+  background: linear-gradient(90deg, #ffffff (22px - 2px), transparent 1%)
       center,
-    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
-    #e2e2e2;
+    linear-gradient(#ffffff (22px - 2px), transparent 1%) center, #e2e2e2;
   background-size: 22px 22px;
   color: $text-primary;
 
@@ -305,19 +299,18 @@ body {
 .team {
   @include content-section();
   // background-color: #ffffff;
-  background: linear-gradient(
-        90deg,
-        #ffffff (22px - 2px),
-        transparent 1%
-      )
+  background: linear-gradient(90deg, #ffffff (22px - 2px), transparent 1%)
       center,
-    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
-    #e2e2e2;
+    linear-gradient(#ffffff (22px - 2px), transparent 1%) center, #e2e2e2;
   background-size: 22px 22px;
   color: $text-primary;
 
   h2 {
     @include section-title();
+    @include block-base();
+  }
+
+  p {
     @include block-base();
   }
 
@@ -349,7 +342,7 @@ body {
         img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
           border-radius: 50%;
         }
       }
