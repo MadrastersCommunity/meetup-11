@@ -7,7 +7,7 @@ body {
   font-size: 16px;
   scroll-behavior: smooth;
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -112,6 +112,12 @@ body {
     span {
       font-size: 3rem;
       font-weight: 700;
+      @media (max-width: 768px) {
+        font-size: 2.1rem;
+      }
+    }
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
     }
   }
   p {
@@ -131,19 +137,28 @@ body {
     border: none;
     border-radius: 0;
     text-transform: uppercase;
-    box-shadow: 2px 2px 2px 3px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
     transition: all ease-in 0.2s;
     &:hover {
       opacity: 0.8;
       text-decoration: underline;
-      box-shadow: 3px 3px 3px 4px rgba(0,0,0,0.1);
+      box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1);
     }
   }
 }
 
 .about {
   @include content-section();
-  background-color: #ffffff;
+  // background-color: #ffffff;
+  background: linear-gradient(
+        90deg,
+        #ffffff (22px - 2px),
+        transparent 1%
+      )
+      center,
+    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
+    #e2e2e2;
+  background-size: 22px 22px;
   color: $text-primary;
 
   h2 {
@@ -223,7 +238,16 @@ body {
 
 .agenda {
   @include content-section();
-  background-color: #ffffff;
+  // background-color: #ffffff;
+  background: linear-gradient(
+        90deg,
+        #ffffff (22px - 2px),
+        transparent 1%
+      )
+      center,
+    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
+    #e2e2e2;
+  background-size: 22px 22px;
   color: $text-primary;
 
   h2 {
@@ -280,7 +304,16 @@ body {
 
 .team {
   @include content-section();
-  background-color: #ffffff;
+  // background-color: #ffffff;
+  background: linear-gradient(
+        90deg,
+        #ffffff (22px - 2px),
+        transparent 1%
+      )
+      center,
+    linear-gradient( #ffffff (22px - 2px), transparent 1%) center,
+    #e2e2e2;
+  background-size: 22px 22px;
   color: $text-primary;
 
   h2 {
