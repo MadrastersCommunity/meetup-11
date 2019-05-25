@@ -431,18 +431,40 @@ footer {
   }
 }
 
-// .gallery {
-//   width: 100%;
-//   a {
-//     text-decoration: none;
-//     display: block;
-//     float: left;
-//     margin: 0 5px 5px 0;
-//     width: 120px;
+.gallery {
+  @include content-section();
+  // background-color: #ffffff;
+  background: linear-gradient(90deg, #ffffff (22px - 2px), transparent 1%)
+      center,
+    linear-gradient(#ffffff (22px - 2px), transparent 1%) center, #e2e2e2;
+  background-size: 22px 22px;
+  color: $text-primary;
 
-//     img {
-//       width: 100%;
-//       height: auto;
-//     }
-//   }
-// }
+  h2 {
+    @include section-title();
+    @include block-base();
+  }
+
+  p {
+    @include block-base();
+  }
+
+  .lightgallery {
+    @include block-base();
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      text-decoration: none;
+      display: block;
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 180px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
