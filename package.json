@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "cssnano": "^4.1.8",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.3"
   }
 }
